@@ -1,0 +1,25 @@
+section {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.currentWordContainer {
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.currentWordContainer > h2 {
+    font-size: medium;
+}
+
+.wordToGuess {
+    text-align: center;
+    border: none;
+    font-size: large;
+    background-color: white;
+    color: red;
+    text-decoration: cornsilk;
+    text-transform: uppercase;
+}

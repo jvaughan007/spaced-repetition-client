@@ -1,0 +1,25 @@
+p {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin: 1rem;
+    text-align: center;
+    border: solid;
+    border-radius: .5rem;
+    padding: .5rem;
+    background-color: rgb(240, 241, 243);
+    font-weight: bold;
+}
+
+h2 {
+    margin-left: 1rem;
+}
+
+.formContainer {
+    border: solid;
+    border-radius: .5rem;
+    padding: .5rem;
+    background-color: rgb(240, 241, 243);
+    font-weight: bold;
+    margin: 1rem;
+}

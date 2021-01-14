@@ -1,0 +1,15 @@
+.formContainer {
+    border: solid;
+    border-radius: .5rem;
+    padding: .5rem;
+    background-color: rgb(240, 241, 243);
+    font-weight: bold;
+    margin: 1rem;
+}
+
+form > button {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem;
+    margin-left: 1rem; 
+}
