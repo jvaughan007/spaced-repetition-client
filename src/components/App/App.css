@@ -1,0 +1,9 @@
+main {
+    display:block;
+    margin-top: 2rem;
+    
+}
+
+main > section {
+    width:100%;
+}

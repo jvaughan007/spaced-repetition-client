@@ -19,8 +19,9 @@ class LearningRoute extends Component {
         nextWord: "",
         totalScore: 0,
         wordCorrectCount: 0,
-        wordIncorrectCount: 0
-      }
+        wordIncorrectCount: 0,
+      },
+      userHasSubmitted: false
     };
   }
 
@@ -46,7 +47,8 @@ class LearningRoute extends Component {
         nextWord: data.nextWord,
         totalScore: data.totalScore,
         wordCorrectCount: data.wordCorrectCount,
-        wordIncorrectCount: data.wordIncorrectCount})
+        wordIncorrectCount: data.wordIncorrectCount
+      })
       })
       .catch((err) => console.log(err.message));
     }
@@ -70,8 +72,8 @@ class LearningRoute extends Component {
     )
   }
 
-  inputValue = (value) => {
-     this.setState({answerInput: value});
+  inputValue = (e) => {
+     this.setState({answerInput: e.target.value});
   }
 
   guessBox = () => {
@@ -81,8 +83,8 @@ class LearningRoute extends Component {
           <p className="guessDirections">Input your answer below</p>
         </div>
         <form onSubmit={(e) => this.checkAnswer(e)} >
-          <input name="guess" id="guessInput" type="text" onChange={this.inputValue}required></input>
-          <button type="submit">Submit</button>
+          <input name="guess" id="guessInput" type="text" onChange={(e) => this.inputValue(e)}required></input>
+          <button type="submit" onClick={() => this.setState({userHasSubmitted: true})}>Submit</button>
         </form>
       </div>
     )
@@ -91,40 +93,42 @@ class LearningRoute extends Component {
   checkAnswer = (e) => {
     e.preventDefault();
     console.log(this.state.answerInput);
-    // const { API_ENDPOINT } = config;
-    // fetch(`${API_ENDPOINT}/language/guess`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //     authorization: `bearer ${TokenService.getAuthToken()}`,
-    //   },
-    //   body: JSON.stringify({ guess: this.state.answerInput }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log('this is the guess return data', data);
-    //     this.setState({ answerData: data });
-    //   });
+    const { API_ENDPOINT } = config;
+    fetch(`${API_ENDPOINT}/language/guess`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify({ guess: this.state.answerInput }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('this is the guess return data', data);
+        this.setState({ answerData: data });
+      });
   };
 
   returnedResult = () => {
-    if (this.state.answerData.isCorrect) {
+    if (this.state.answerData.isCorrect && this.state.userHasSubmitted) {
       return (
         <div className="correctReturn">
           <h1>Awesome! You got it right!</h1>
-          <button>Try Next Word</button>
+          <h2>The correct answer was "{this.state.answerData.answer}"</h2>
+          <button onClick={() => {this.setState({userHasSubmitted: false})}}><a href="/learn">Try Next Word</a></button>
         </div>
       ) 
-    } else if (!this.state.answerData.isCorrect) {
+    } else if (!this.state.answerData.isCorrect && this.state.userHasSubmitted) {
       return (
-        <div className="correctReturn">
+        <div className="incorrectReturn">
           <h1>Oh no! You got it wrong!</h1>
-          <button><a href="/learn">Try Next Word</a></button>
+          <h2>The correct answer was "{this.state.answerData.answer}"</h2>
+          <button onClick={() => {this.setState({userHasSubmitted: false})}}><a href="/learn">Try Next Word</a></button>
         </div>
       ) 
       } else {
         return (
-          <div className="correctReturn">
+          <div className="base">
             <p></p>
           </div>
         ) 

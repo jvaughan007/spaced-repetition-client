@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../../config';
 import TokenService from '../../services/token-service';
+import './DashboardRoute.css';
 
 class DashboardRoute extends Component {
 
@@ -57,17 +58,15 @@ fetch(`${API_ENDPOINT}/language`, fetchHeaders)
 
   render() {
     return (
-      <div>
-        <section>
-          <div>
+      <div className="dashboardContainer">
+          <div className="wordHeader">
             <h1> Language: {this.state.language.name} </h1>
-            <a id="learn" className="learnLink" href="/learn">Start Learning</a>
+            <button><a id="learn" className="learnLink" href="/learn">Start Learning</a></button>
           </div>
-        </section>
         <h2> Words: </h2>
-        {this.state.words.map((word) => this.wordCard(word))}
-        <section>
-        </section>
+        <div className="wordsList">
+          {this.state.words.map((word) => this.wordCard(word))}
+        </div>
       </div>
     );
   }

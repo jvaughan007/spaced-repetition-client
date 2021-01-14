@@ -1,3 +1,9 @@
+.loginContainer {
+    display: flex;
+    align-self: center;
+    width: 100%;
+}
+
 .formContainer {
     border: solid;
     border-radius: .5rem;
@@ -5,6 +11,8 @@
     background-color: rgb(240, 241, 243);
     font-weight: bold;
     margin: 1rem;
+    align-self: center;
+    
 }
 
 form > button {
@@ -12,4 +20,14 @@ form > button {
     justify-content: space-between;
     margin: .5rem;
     margin-left: 1rem; 
+}
+
+.correctReturn, .incorrectReturn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.correctReturn > button, .incorrectReturn > button {
+    align-self: center;
 }

@@ -39,6 +39,13 @@ header > nav > a:link, header > nav > a:visited, header > div > nav > a:link, he
 header > div > nav  {
     display: flex;
     flex-direction: row;
+    color: aliceblue;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+header > div > nav > span {
+    margin-right: .5rem;
 }
 
 header > nav > a:hover {

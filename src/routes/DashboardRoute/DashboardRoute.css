@@ -1,0 +1,47 @@
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.wordHeader {
+    display: flex;
+    flex-direction: column;
+}
+
+.wordHeader > h1, .wordHeader > a {
+    text-align: center;
+}
+
+.wordHeader > button {
+    align-self: center;
+}
+
+.wordsList {
+    border: solid;
+    border-radius: .5rem;
+    padding: 2rem;
+    margin: 0 2rem;
+    background-color: gray;
+    margin-bottom: 3rem;
+}
+
+.wordCard {
+    border: solid;
+    border-radius: .5rem;
+    border-color: black;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: aliceblue;
+}
+
+.wordCard > .wordCard_word > h3 {
+    text-transform: uppercase;
+}
+
+.wordCard > .counts > .correct > h4 {
+    color: green;
+}
+
+.wordCard > .counts > .incorrect > h4 {
+    color: red;
+}

@@ -12,6 +12,7 @@ section {
 
 .currentWordContainer > h2 {
     font-size: medium;
+    text-align: center;
 }
 
 .wordToGuess {
@@ -22,4 +23,44 @@ section {
     color: red;
     text-decoration: cornsilk;
     text-transform: uppercase;
+}
+
+.guessBoxContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid;
+    background-color: rgb(240, 241, 243);;
+    padding: .5rem;
+    border-radius: .5rem;
+    margin: 2rem 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form > #guessInput {
+    align-self: center;
+    
+}
+
+form > button {
+    display: block;
+    align-self: center;
+}
+
+.base > p {
+    visibility: hidden;
+    margin: -5rem;
+}
+
+.guessDirectionsContainer > p {
+    border: none;
+}
+
+.answerCountContainer > .correctAnswersContainer > h3, .answerCountContainer > .incorrectAnswersContainer > h3  {
+   text-align: center;
 }
