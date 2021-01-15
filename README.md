@@ -13,7 +13,7 @@ An app which uses spaced repetition to help people memorize a foreign language. 
 ![Registration_Route](./src/screenshots/registration.png)
 ![Login_Route](./src/screenshots/login.png)
 ![!Dashboard_Route](./src/screenshots/dashboard.png)
-![Learning_Route](./src/screenshots/learn.png)
+![Learning_Route](./src/screenshots/learning.png)
 ![Feedback_Example](./src/screenshots/feedback.png)
 
 ### Front-end technologies
