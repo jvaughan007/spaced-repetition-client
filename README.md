@@ -1,5 +1,41 @@
 # Spaced Repetition Capstone
 
+- [Live_App](https://spaced-repetition-client-bay.vercel.app/register)
+- [Server_Side_Repo](https://github.com/jvaughan007/spaced-repetition-api)
+- [Client_Side_Repo](https://github.com/jvaughan007/spaced-repetition-client)
+
+## Description
+
+An app which uses spaced repetition to help people memorize a foreign language. The app displays words in one language and the users will be asked to input the corresponding translation.
+
+## Screenshots
+
+![Registration_Route](./src/screenshots/registration.png)
+![Login_Route](./src/screenshots/login.png)
+![!Dashboard_Route](./src/screenshots/dashboard.png)
+![Learning_Route](./src/screenshots/learn.png)
+![Feedback_Example](./src/screenshots/feedback.png)
+
+### Front-end technologies
+
+Reactjs, HTML, CSS, JavaScript, HTML
+
+### Back-end technologies
+
+Node.js, Express
+
+### Database
+
+PostgreSQL
+
+### Tested with
+
+Cypress and Mocha
+
+## Hosted on
+
+Heroku and Vercel
+
 ## Setup
 
 To setup the application
