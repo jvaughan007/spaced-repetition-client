@@ -64,3 +64,8 @@ form > button {
 .answerCountContainer > .correctAnswersContainer > h3, .answerCountContainer > .incorrectAnswersContainer > h3  {
    text-align: center;
 }
+
+
+.hiddenButton {
+    visibility: hidden;
+}

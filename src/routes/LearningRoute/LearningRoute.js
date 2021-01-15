@@ -84,7 +84,7 @@ class LearningRoute extends Component {
         </div>
         <form onSubmit={(e) => this.checkAnswer(e)} >
           <input name="guess" id="guessInput" type="text" onChange={(e) => this.inputValue(e)}required></input>
-          <button type="submit" onClick={() => this.setState({userHasSubmitted: true})}>Submit</button>
+          {!this.state.userHasSubmitted ? <button type="submit" onClick={() => this.setState({userHasSubmitted: true})}>Submit</button> : <button type="submit" className="hiddenButton" onClick={() => this.setState({userHasSubmitted: true})}>Submit</button>}
         </form>
       </div>
     )
